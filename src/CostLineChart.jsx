@@ -34,8 +34,8 @@ const CostLineChart = ({ minOrders, maxOrders, step, hourlyRate, cookHourlyRate,
   
     const cost =
       P * portionCost +
-      cooks * cookHourlyRate * actualCookHours +
-      motorcycles * hourlyRate * actualMotorcycleHours;
+      cookHourlyRate * actualCookHours +
+      hourlyRate * actualMotorcycleHours;
   
     const gain = P * portionPrice - cost;
 
