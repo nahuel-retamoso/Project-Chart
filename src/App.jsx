@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CostLineChart from './CostLineChart';
+import { Flex, Input, InputGroup, InputLeftAddon, Stack } from '@chakra-ui/react';
 
 const App = () => {
 
@@ -40,48 +41,60 @@ const App = () => {
   
 
   return (
-    <div>
-    <label htmlFor="maxOrders">Max Orders: </label>
-    <input
-      type="number"
-      id="maxOrders"
-      value={maxOrders}
-      onChange={handleMaxOrdersChange}
-    />
-    <br />
-    <label htmlFor="hourlyRate">Hourly Rate per Motorcycle: </label>
-    <input
-      type="number"
-      id="hourlyRate"
-      value={hourlyRate}
-      onChange={handleHourlyRateChange}
-    />
-     <br />
-    <label htmlFor="cookHourlyRate">Hourly Rate per Cook: </label>
-    <input
-      type="number"
-      id="cookHourlyRate"
-      value={cookHourlyRate}
-      onChange={handleCookHourlyRateChange}
-    />
-     <br />
-    <label htmlFor="portionCost">Portion Cost: </label>
-    <input
-      type="number"
-      id="portionCost"
-      value={portionCost}
-      onChange={handlePortionCostChange}
-    />
-     <br />
-    <label htmlFor="portionPrice">Portion Price: </label>
-    <input
-      type="number"
-      id="portionPrice"
-      value={portionPrice}
-      onChange={handlePortionPriceChange}
-    />
-    <CostLineChart minOrders={12} maxOrders={maxOrders} step={12} hourlyRate={hourlyRate} cookHourlyRate={cookHourlyRate} portionCost={portionCost} portionPrice={portionPrice}/>
-  </div>
+    <Flex w='100%' bg='blackAlpha.100'>
+      <Flex w='70%' justify='center'>
+        <CostLineChart minOrders={12} maxOrders={maxOrders} step={12} hourlyRate={hourlyRate} cookHourlyRate={cookHourlyRate} portionCost={portionCost} portionPrice={portionPrice} />
+      </Flex>
+      <Flex position='sticky' alignSelf='flex-start' top='0' direction='column' boxShadow='md' p='20px' h='100vh' w='30%'>
+        <Stack spacing={4}>
+          <InputGroup>
+            <InputLeftAddon w='70%' children="Max Orders" />
+            <Input
+              type="number"
+              id="maxOrders"
+              value={maxOrders}
+              onChange={handleMaxOrdersChange}
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputLeftAddon w='70%' children="Hourly Rate per Motorcycle" />
+            <Input
+              type="number"
+              id="hourlyRate"
+              value={hourlyRate}
+              onChange={handleHourlyRateChange}
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputLeftAddon w='70%' children="Hourly Rate per Cook" />
+            <Input
+              type="number"
+              id="cookHourlyRate"
+              value={cookHourlyRate}
+              onChange={handleCookHourlyRateChange}
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputLeftAddon w='70%' children="Portion Cost" />
+            <Input
+              type="number"
+              id="portionCost"
+              value={portionCost}
+              onChange={handlePortionCostChange}
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputLeftAddon w='70%' children="Max Orders" />
+            <Input
+              type="number"
+              id="portionPrice"
+              value={portionPrice}
+              onChange={handlePortionPriceChange}
+            />
+          </InputGroup>
+        </Stack>
+      </Flex>
+    </Flex>
   );
 };
 

@@ -76,10 +76,10 @@ const CostLineChart = ({ minOrders, maxOrders, step, hourlyRate, cookHourlyRate,
           height={600}
           data={data}
           margin={{
-            top: 5,
+            top: 50,
             right: 30,
             left: 20,
-            bottom: 5,
+            bottom: 50,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -99,7 +99,7 @@ const CostLineChart = ({ minOrders, maxOrders, step, hourlyRate, cookHourlyRate,
             top: 5,
             right: 30,
             left: 20,
-            bottom: 5,
+            bottom: 50,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
